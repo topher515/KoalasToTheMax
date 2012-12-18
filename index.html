@@ -261,9 +261,12 @@
           idx = href.indexOf('?');
           if (idx == -1) {
             // Case 1
-            var possible = ['dog', 'kitten', 'koalas', 'lion', 'otter', 'owls', 'pandas'];
+            var possible = ['931b308808e311e2b10e123138204060_7.jpeg', 
+                  'db4434d63a7a11e2b44322000a1f92df_7.jpeg', 
+                  'e745dfda382911e28d7d22000a1f981a_7.jpeg'
+                ];
             shownFile = possible[Math.floor(Math.random() * possible.length)];
-            file = 'img/' + shownFile + '.jpg';
+            file = 'img/' + shownFile;
           } else {
             rest = href.substr(idx + 1);
             if (rest.match(/^[a-z0-9+\/]+=*$/i)) {
@@ -354,7 +357,7 @@
               track('GoodLoad-' + version, 'Yay');
             }
           };
-          img.src = "http://distilleryimage5.s3.amazonaws.com/8377f63afc3011e1b3ad22000a1de2ac_7.jpg";
+          img.src = file;
         } catch (e) {
           track('Problemo', String(e.message));
         }
